@@ -15,4 +15,7 @@ CHIP And {
 
     PARTS:
     // Put your code here:
+    //Solution to AND
+    Nand(a=a, b=b, out=n);
+    Not(in=n, out=out);
 }
