@@ -14,4 +14,7 @@ CHIP HalfAdder {
 
     PARTS:
     // Put you code here:
+    //Looking back at Xor truth table and And truth table
+    
+
 }
