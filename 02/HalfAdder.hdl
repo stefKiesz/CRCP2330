@@ -15,6 +15,9 @@ CHIP HalfAdder {
     PARTS:
     // Put you code here:
     //Looking back at Xor truth table and And truth table
-    
+    //Now Testing for Answer
+    Xor(a=a, b=b, out=sum);
+    And(a=a, b=b, out=carry);
+
 
 }
