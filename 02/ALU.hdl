@@ -44,25 +44,23 @@ CHIP ALU {
     PARTS:
    // Put you code here:
    //Solution ALU
+   //Works on NonStat
+ 
+ Mux16 (a=x, b=false, sel=zx, out=xMuxZX);
+Not16 (in=xMuxZX, out=notx);
+Mux16 (a=xMuxZX, b=notx,  sel=nx, out=xMuxNX);
 
-    // Input Transformation
-    Not16(in=y,out=noty);
-    Not16(in=x,out=notx);
+// Pre-setting y
+Mux16 (a=y, b=false, sel=zy, out=yMuxZY); 
+Not16 (in=yMuxZY, out=noty);  
+Mux16 (a=yMuxZY, b=noty,  sel=ny, out=yMuxNY); 
 
-    // Pre-setting x
-    Mux16 (a=x,      b=false, sel=zx, out=xMuxZX);
-    Mux16 (a=xMuxZX, b=notx,  sel=nx, out=xMuxNX);
+// f  (Selecting between computing + or &)
+And16 (a=xMuxNX, b=yMuxNY, out=yANDx);
+Add16 (a=xMuxNX, b=yMuxNY, out=yADDx);
+Mux16 (a=yANDx,  b=yADDx,  sel=f, out=outF);
 
-    // Pre-setting y
-    Mux16 (a=y,      b=false, sel=zy, out=yMuxZY);   
-    Mux16 (a=yMuxZY, b=noty,  sel=ny, out=yMuxNY);
-
-    // f  (Selecting between computing + or &)
-    And16 (a=xMuxNX, b=yMuxNY, out=yANDx);
-    Add16 (a=xMuxNX, b=yMuxNY, out=yADDx);
-    Mux16 (a=yANDx,  b=yADDx,  sel=f, out=outF);
-
-    // no (Post-setting the output)
-    Not16 (in=outF,out=NOToutF);
-    Mux16 (a=outF, b=NOToutF, sel=no, out=out); 
+// no (Post-setting the output)
+Not16 (in=outF,out=NOToutF);
+Mux16 (a=outF, b=NOToutF, sel=no, out=out);
 }
