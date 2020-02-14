@@ -44,23 +44,27 @@ CHIP ALU {
     PARTS:
    // Put you code here:
    //Solution ALU
-   //Works on NonStat
- 
- Mux16 (a=x, b=false, sel=zx, out=xMuxZX);
-Not16 (in=xMuxZX, out=notx);
-Mux16 (a=xMuxZX, b=notx,  sel=nx, out=xMuxNX);
+   
 
-// Pre-setting y
-Mux16 (a=y, b=false, sel=zy, out=yMuxZY); 
-Not16 (in=yMuxZY, out=noty);  
-Mux16 (a=yMuxZY, b=noty,  sel=ny, out=yMuxNY); 
+    Mux16(a=x, b=false, sel=zx, out=zeroedX);
+    Mux16(a=y, b=false, sel=zy, out=zeroedY);
 
-// f  (Selecting between computing + or &)
-And16 (a=xMuxNX, b=yMuxNY, out=yANDx);
-Add16 (a=xMuxNX, b=yMuxNY, out=yADDx);
-Mux16 (a=yANDx,  b=yADDx,  sel=f, out=outF);
+    Not16(in=zeroedX, out=notX);
+    Mux16(a=zeroedX, b=notX, sel=nx, out=finalX);
 
-// no (Post-setting the output)
-Not16 (in=outF,out=NOToutF);
-Mux16 (a=outF, b=NOToutF, sel=no, out=out);
-}
+    Not16(in=zeroedY, out=notY);
+    Mux16(a=zeroedY, b=notY, sel=ny, out=finalY);
+
+    And16(a=finalX, b=finalY, out=anded);
+    Add16(a=finalX, b=finalY, out=added);
+    Mux16(a=anded, b=added, sel=f, out=prelim);
+
+    Not16(in=prelim, out=notPrelim);
+    Mux16(a=prelim, b=notPrelim, sel=no, out[0..7]=left, out[8..15]=right, out[15]=ng, out=out);
+
+    Or8Way(in=left, out=orLeft);
+    Or8Way(in=right, out=orRight);
+    Or(a=orLeft, b=orRight, out=temp);
+    Not(in=temp, out=zr);
+    
+    }
