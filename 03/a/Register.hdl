@@ -15,6 +15,7 @@ CHIP Register {
 
     PARTS:
     // Put your code here:
+    //Solutions to Register
     Bit(in=in[0], load=load, out=out[0]);
     Bit(in=in[1], load=load, out=out[1]);
     Bit(in=in[2], load=load, out=out[2]);
@@ -25,4 +26,10 @@ CHIP Register {
     Bit(in=in[7], load=load, out=out[7]);
     Bit(in=in[8], load=load, out=out[8]);
     Bit(in=in[9], load=load, out=out[9]);
+    Bit(in=in[10], load=load, out=out[10]);
+    Bit(in=in[11], load=load, out=out[11]);
+    Bit(in=in[12], load=load, out=out[12]);
+    Bit(in=in[13], load=load, out=out[13]);
+    Bit(in=in[14], load=load, out=out[14]);
+    Bit(in=in[15], load=load, out=out[15]);
 }
