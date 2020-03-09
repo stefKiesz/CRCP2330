@@ -7,3 +7,31 @@
 // (R0, R1, R2 refer to RAM[0], RAM[1], and RAM[2], respectively.)
 
 // Put your code here.
+
+//Setting the argument
+
+//STEP 1
+@R2
+M=0
+
+//STEP 2
+@counter // M = counter
+
+//STEP 3
+(LOOP)
+
+//STEP 4
+@counter
+D=M // D = counter
+
+//STEP 5
+@R1
+D=D-M // D = counter-M
+
+//STEP 6
+@END
+D;JGE // if counter >= 0 or if R1 >= END
+
+
+
+
