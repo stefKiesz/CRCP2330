@@ -32,6 +32,15 @@ D=D-M // D = counter-M
 @END
 D;JGE // if counter >= 0 or if R1 >= END
 
+////////////////////////////////////////////////////
+
+//STEP 7
+@counter
+M=M+1 // counter++
+
+
+
+
 
 
 
