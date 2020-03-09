@@ -23,6 +23,14 @@ D=A
 @product
 M=D
 
+(LOOP)
+// if i <= 0, get out of LOOP
+@i
+D=M
+@END
+D;JLE
+
+
 
 
 
