@@ -37,6 +37,25 @@ D;JGE // if counter >= 0 or if R1 >= END
 //STEP 7
 @counter
 M=M+1 // counter++
+@R0
+D=M // D=R0
+
+//STEP 8
+@R2
+M=M+D // R2=R2+R0
+
+//STEP 9
+@LOOP
+
+//STEP 10
+0;JMP
+
+(END)
+@END
+
+0;JMP
+
+
 
 
 
