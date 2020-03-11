@@ -19,6 +19,34 @@ D=M
 //Initializing count to the value of RAM[1]
 M=D
 
+(LOOP)
+
+@count
+D=M
+
+@END
+D;JEQ //If count is 0, go to END
+
+@R0
+D=M
+
+@sum
+//Adding RAM[0] to sum
+M=M+D
+
+@count
+//Decrementing count by 1
+M=M-1
+
+@LOOP
+//Loop Again
+0;JMP
+
+(END)
+
+
+
+
 
 
 
