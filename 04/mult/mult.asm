@@ -50,6 +50,7 @@ D=M
 //Sum to RAM 2
 M=D
 
+0;JMP
 
 
 

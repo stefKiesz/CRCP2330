@@ -22,7 +22,7 @@
 @8192	
 D=A
 
-//Initializ the index to 8192
+//Initialize the index to 8192
 //Remaining address left to color onscreen
 @i                  
 M=D
