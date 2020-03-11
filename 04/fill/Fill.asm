@@ -22,3 +22,16 @@
 @8192	
 D=A
 
+//Initializ the index to 8192
+//Remaining address left to color onscreen
+@i                  
+M=D
+
+//Sending index back.
+(LOOP)
+
+@i
+M=M-1
+D=M
+@INIT
+
