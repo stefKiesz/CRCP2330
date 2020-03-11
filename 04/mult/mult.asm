@@ -11,14 +11,14 @@
 //Making a counter
 //Initializing i with value in R1
 
-@R1
+@1
 D=M
 
 @i
 M=D
 
 //Initilaizing product with 0
-@R0
+@0
 D=A
 @product
 M=D
@@ -38,11 +38,21 @@ M=D
 //Load and add R0 to product
 @product
 D=M
-@R0
+@0
 D=D+M
 @product
 M=D
 
+//Restarting loop
+@LOOP
+0;JMP
+(END)
+
+//Load product to R2
+@product
+D=M
+@2
+M=D
 
 
 
