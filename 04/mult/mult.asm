@@ -8,6 +8,17 @@
 
 // Put your code here.
 
+@sum
+//Initializing sum to 0
+M=0 
+
+@R1
+D=M
+
+@count
+//Initializing count to the value of RAM[1]
+M=D
+
 
 
 
