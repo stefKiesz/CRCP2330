@@ -47,7 +47,7 @@ M=M-1
 @sum
 D=M
 @R2
-//Sum to RAM[2]
+//Sum to RAM 2
 M=D
 
 
