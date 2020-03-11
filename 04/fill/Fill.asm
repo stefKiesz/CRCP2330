@@ -50,3 +50,38 @@ D;JEQ
 
 (BLACK) 
 
+//Load screen's first address: 16384 (0x4000)            
+@SCREEN            
+D=A
+@i
+
+//Add current index to the screen's first address
+//Color the current set of 16 bit pixels
+A=D+M
+
+//Set value in current address to -1
+//All 16 bit pixels will be black              
+M=-1 
+
+//Send index back.             
+@LOOP              
+0;JMP
+
+(WHITE)
+
+//Load screen's first address: 16384 (0x4000)
+@SCREEN            
+D=A                
+@i
+
+//Add current index to screen's first address
+//Color the current set of 16 bit pixels        
+A=D+M
+
+//Set value in current address to 0
+//All 16 bit pixels will be white.             
+M=0
+
+//Send index back.                  
+@LOOP           
+0;JMP
