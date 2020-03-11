@@ -12,3 +12,13 @@
 // the screen should remain fully clear as long as no key is pressed.
 
 // Put your code here.
+
+//Initialize i
+//Index runs on the screen's pixels
+
+(INIT)
+
+//32 * 256 of 16 bit to cover the screen 	
+@8192	
+D=A
+
