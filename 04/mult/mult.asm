@@ -30,6 +30,22 @@ D=M
 @END
 D;JLE
 
+//Decrease i
+D=D-1
+@i
+M=D
+
+//Load and add R0 to product
+@product
+D=M
+@R0
+D=D+M
+@product
+M=D
+
+
+
+
 
 
 
