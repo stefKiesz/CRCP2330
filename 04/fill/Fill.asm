@@ -35,3 +35,18 @@ M=M-1
 D=M
 @INIT
 
+//If index < 0, reset index initializer
+D;JLT
+
+//Load keyboard's address
+@KBD	            
+D=M
+
+//If keyboard == 0)/ no keypressed, go WHITE, else go BLACK
+@WHITE		        
+D;JEQ
+@BLACK
+0;JMP
+
+(BLACK) 
+
