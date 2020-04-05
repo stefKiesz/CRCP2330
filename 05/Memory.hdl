@@ -32,4 +32,7 @@ CHIP Memory {
     //Let's layout 
     //What are things to we need to connect?
 
+   DMux4Way(in=load, sel=address[13..14], a=loadram1, b=loadram2, c=loadscreen);
+   
+
 }
