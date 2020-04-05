@@ -42,6 +42,8 @@ CHIP CPU {
     // Put your code here:
 
     //Decode Instruction
+    Not(in=instruction[15], out=ainst);
+    Not(in=ainst, out=cinst);
     
 
 }
