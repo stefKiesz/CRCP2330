@@ -34,6 +34,7 @@ CHIP Memory {
 
    DMux4Way(in=load, sel=address[13..14], a=loadram1, b=loadram2, c=loadscreen);
 
+   //Loading pieces together...
    Or(a=loadram1, b=loadram2, out=loadram);
    RAM16K(in=in, load=loadram, address=address[0..13], out=ramout);
 
@@ -41,4 +42,6 @@ CHIP Memory {
    Keyboard(out=keyboardout);
 
    Mux4Way16(a=ramout, b=ramout, c=screenout, d=keyboardout, sel=address[13..14], out=out);
+
+   //COMPLETED. TEST SUCCESSFUL!
 }
