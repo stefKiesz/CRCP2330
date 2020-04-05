@@ -28,4 +28,8 @@ CHIP Memory {
 
     PARTS:
     // Put your code here:
+
+    //Let's layout 
+    //What are things to we need to connect?
+
 }
