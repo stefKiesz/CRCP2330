@@ -22,4 +22,7 @@ CHIP Computer {
     // Put your code here:
 
     //CPU set
+    CPU(instruction=romout, reset=reset, inM=memout, writeM=loadmem, outM=nextmem, addressM=memaddr, pc=romaddr);
+
+    
 }
