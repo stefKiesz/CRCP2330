@@ -49,7 +49,7 @@ CHIP CPU {
     And(a=cinst,b=instruction[5], out=computea);
     Mux16(a=instruction, b=alu, sel=instruction[15], out=newa);
     Or(a=ainst, b=computea, out=loada);
-    ARegister(in=newa, load=load, out=a);
+    ARegister(in=newa, load=loada, out=a);
 
     //D Register
     And(a=instruction[4], b=cinst, out=loadd);
@@ -88,7 +88,4 @@ CHIP CPU {
 
     //PC
     PC(in=a, load=shouldjump, inc=true, reset=reset, out[0..14]=pc);
-
-
-
 }
