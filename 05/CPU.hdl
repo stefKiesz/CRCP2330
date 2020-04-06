@@ -44,6 +44,16 @@ CHIP CPU {
     //Decode Instruction
     Not(in=instruction[15], out=ainst);
     Not(in=ainst, out=cinst);
-    
+
+    //A Register
+    And(a=cinst,b=instruction[5], out=computea);
+    Mux16(a=instruction, b=alu, sel=instruction[15], out=newa);
+    Or(a=ainst, b=computea, out=loada);
+    ARegister(in=newa, load=load, out=a);
+
+    //D Register
+    And(a=instruction[4], b=cinst, out=loadd);
+    DRegister(in=alu, load=loada, out=d);
+
 
 }
