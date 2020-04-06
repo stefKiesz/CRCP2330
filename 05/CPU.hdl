@@ -76,7 +76,17 @@ CHIP CPU {
     Or(a=jltz, b=jpos, out=jumpcondition);
     And(a=cinst, b=jumpcondition, out=shouldjump);
 
-    
+
+    //writeM
+    And(a=cinst, b=instruction[3], out=writeM);
+
+    //addressM
+    And16(a=a, b=true, out[0..14]=addressM);
+
+    //outM
+    And16(a=alu, b=true, out=outM);
+
+  
 
 
 
