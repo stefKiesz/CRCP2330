@@ -56,6 +56,15 @@ CHIP CPU {
     DRegister(in=alu, load=loadd, out=d);
 
     //ALU
+    Mux16(a=a, b=inM, sel=instruction[12], out=aorm);
+    And(a=instruction[11], b=true, out=zx);
+    And(a=instruction[10], b=true, out=nx);
+    And(a=instruction[9], b=true, out=zy);
+    And(a=instruction[8], b=true, out=ny);
+    And(a=instruction[7], b=true, out=f);
+    And(a=instruction[6], b=true, out=no);
+    ALU(x=d, y=aorm, zx=zx, nx=nx, zy=zy, ny=ny, f=f, no=no, out=alu, zr=zr, ng=ng);
+    
 
 
 
