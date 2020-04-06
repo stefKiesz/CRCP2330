@@ -30,5 +30,7 @@ CHIP Computer {
     //ROM32K set
     ROM32K(address=romaddr, out=romout);
 
-    
+    //COMPLETED
+
+
 }
