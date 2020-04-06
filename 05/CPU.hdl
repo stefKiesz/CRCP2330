@@ -64,8 +64,19 @@ CHIP CPU {
     And(a=instruction[7], b=true, out=f);
     And(a=instruction[6], b=true, out=no);
     ALU(x=d, y=aorm, zx=zx, nx=nx, zy=zy, ny=ny, f=f, no=no, out=alu, zr=zr, ng=ng);
-    
 
+    //Jump condition
+    Not(in=zr, out=nzr);
+    Not(in=ng, out=nng);
+    And(a=nzr, b=nng, out=pos);
+    And(a=instruction[2], b=ng, out=jlt);
+    And(a=instruction[1], b=zr, out=jz);
+    And(a=instruction[0], b=pos, out=jpos);
+    Or(a=jlt, b=jz, out=jltz);
+    Or(a=jltz, b=jpos, out=jumpcondition);
+    And(a=cinst, b=jumpcondition, out=shouldjump);
+
+    
 
 
 
