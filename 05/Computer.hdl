@@ -24,5 +24,8 @@ CHIP Computer {
     //CPU set
     CPU(instruction=romout, reset=reset, inM=memout, writeM=loadmem, outM=nextmem, addressM=memaddr, pc=romaddr);
 
+    //Memory set
+    Memory(in=nextmem, load=loadmem, address=memaddr, out=memout);
+
     
 }
