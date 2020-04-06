@@ -88,4 +88,6 @@ CHIP CPU {
 
     //PC
     PC(in=a, load=shouldjump, inc=true, reset=reset, out[0..14]=pc);
+
+    //COMPLETED
 }
