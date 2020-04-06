@@ -86,7 +86,8 @@ CHIP CPU {
     //outM
     And16(a=alu, b=true, out=outM);
 
-  
+    //PC
+    PC(in=a, load=shouldjump, inc=true, reset=reset, out[0..14]=pc);
 
 
 
