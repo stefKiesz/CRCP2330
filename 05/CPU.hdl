@@ -53,7 +53,11 @@ CHIP CPU {
 
     //D Register
     And(a=instruction[4], b=cinst, out=loadd);
-    DRegister(in=alu, load=loada, out=d);
+    DRegister(in=alu, load=loadd, out=d);
+
+    //ALU
+
+
 
 
 }
