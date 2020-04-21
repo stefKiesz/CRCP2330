@@ -1,0 +1,41 @@
+
+//Drawing Apples
+
+class Apple {
+	 
+	 function int getApple() {
+
+	 var int apple;
+	 var int key;
+
+	 let apple = 0;
+	 let key = 0;
+
+//setting instructions
+//helps also to view testing
+
+	 do Output.printString("Press Key to Start");
+	 do Output.println();
+
+//setting condition to reset apple anywhere on screen
+
+	while(~key)
+	{
+
+	let apple = apple + 1;
+
+	if(apple = 32767)
+		{
+
+		let apple = 0;
+
+		}
+	let key = Keyboard.keyPressed();
+
+	}
+
+	do Screen.clearScreen();
+	return apple;
+	 							}
+
+			}
