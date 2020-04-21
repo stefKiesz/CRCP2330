@@ -6,3 +6,18 @@
 //https://www.youtube.com/watch?v=AaGK-fj-BAM
 
 //Main Frame of the Project
+
+class Main {
+
+function void mainframe() {
+
+//calling the game to run
+
+	var SnakeGame game;
+		let game = SnakeGame.new();
+		do game.run();
+		do game.dispose();
+	return;
+	 }
+
+}
