@@ -35,6 +35,7 @@ class Apple {
 	}
 
 	do Screen.clearScreen();
+	
 	return apple;
 	 							}
 
