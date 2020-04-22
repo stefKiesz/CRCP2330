@@ -1,2 +1,37 @@
 
 //Drawing Snake
+
+class Snake {
+	
+	//setting snake in grid
+		field SnakeGame game;
+
+	//setting snake's head to X&Y position 
+		field int posX;
+		field int posY;
+
+	//setting length of the snake 
+		field int length;
+
+	//setting snake's growth when eating apples
+		field int growing;
+
+	//setting # left for snake's growth
+		field int leftgrow;
+
+	//setting snake's direction moving
+
+		field int dir;
+		field int lastdir;
+
+	//setting snake's history movements
+
+		field Array histX;
+		field Array histY;
+		field int histSize;
+
+	
+
+
+
+}
