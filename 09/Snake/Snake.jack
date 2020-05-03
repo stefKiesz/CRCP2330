@@ -103,11 +103,37 @@ method void rewriteHistory() {
 //snake's head position
 method int posX() {
 	return posX;
-}
+				  }
 
 method int posY(){
 	return posY;
+                 }
+
+//collectig snake's length
+method int getLength(){
+	return length;
+                      }
+
+//collecting snake's direction
+method int getDir(){
+	return dir;
+                   }
+
+method int getLastDir(){
+	return lastdir;	
+                       }
+
+//setting snake's direction
+method void setDir(int newdir){
+	let dir = newdir;
+	return;
+                              }
+
+method void rememberDir(){
+	let lastdir = dir;
+	return;
 }
+
 
 
 
