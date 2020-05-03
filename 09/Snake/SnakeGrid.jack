@@ -1,0 +1,34 @@
+
+class SnakeGrid{
+
+//setting the field the snake is set to play
+	field SnakeGame game;
+
+//size of the grid
+	field int sizeX;
+	field int sizeY;
+
+//XY position of the apples
+	field int foodX;
+	field int foodY;
+
+//a 2-D array where the snake is
+	field Array grid;
+
+//setting new grid
+	constructor SnakeGrid new(SnakeGame Agame, int Ax, int Ay){
+
+	let game = Agame;
+	let sizeX = Ax / 4;
+	let sizeY = (Ay-16) / 4;
+
+	//set grid
+	do initGrid();
+
+	return this;
+
+	   }
+
+	
+
+}
