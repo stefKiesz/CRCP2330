@@ -57,10 +57,52 @@ class Snake {
 	do drawHead(game.getCycle());
 	let i = i + 1;
 	do game.nextCycle();
-	}
+					 }
 	return this;
 	}
 
+
+	//erasing snake
+	method void dispose() {
+
+	do histX.dispose();
+	do histY.dispose();
+	do Memory.deAlloc(this);
+	return;
+						  }
+
+//if need to be built again
+
+if (game.getCycle() = histSize) {
 	
+	if(game.getCycle() = histSize) {
+	do rewriteHistory();
+	return true;
+	                               }
+
+                                }
+//building snake cycle
+method void rewriteHistory() {
+	
+	var int i, src, dst;
+
+	let i = length;
+	let dst = 0;
+	let src = histSize - length;
+	while(i>0) {
+	let histX[dst] = histX[src];
+	let histY[dst] = histY[src];
+	let src = src + 1;
+	let dst = dst + 1;
+	let i = i - 1;
+			   }
+	return;
+							}
+
+
+
+
 
 }
+
+
