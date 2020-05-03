@@ -31,7 +31,27 @@ class Snake {
 		field int histSize;
 
 	
+	//building a new snake
 
+	constructor Snake new(SnakeGame Agame, int Ax, int Ay, int Alen, int Agrowing){
 
+	var int i;
+
+	let game = Agame;
+	let posX = Ax - Alen;
+	let posY = Ay;
+	let length = Alen;
+	let growing = Agrowing;
+
+	let leftgrow = 0;
+	let dir = 4;
+	let lastdir = 4;
+	let histSize = 512;
+	let histX = Array.new(histSize);
+	let histY = Array.new(histSize);
+
+	
+
+	}
 
 }
