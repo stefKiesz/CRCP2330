@@ -135,6 +135,62 @@ method void rememberDir(){
 }
 
 
+//condition to have snake to move
+method boolean tryMove(){
+	
+	var SnakeGrid grid;
+	let grid = game.getGrid();
+
+//upward
+	if(dir = 1){
+	if (posY = 0){
+
+		return false;
+				 }
+	else{
+		let posY = posY - 1;
+	    }			 
+			    }
+
+//downward
+	if(dir = 2){
+	if(posY = grid.sizeY()){
+		return false;
+						   }
+	else{
+		let posX = posX + 1;
+		}
+			   }
+
+//left
+	if(dir = 3){
+	if(posX = 0){
+		return false;
+				}
+	else{
+		let posX = posX - 1;
+		}
+				}
+
+//right
+	if(dir = 4){
+	if(posX = grid.sizeX()){
+		return false;
+						   }
+	else{
+		let posX = posX + 1;
+	    }
+			   }
+
+
+
+//condition if the snake hits itself
+	if(grid.checkOccupied(posX, posY)){
+		return false;
+									  }
+                             }
+
+
 
 
 }
