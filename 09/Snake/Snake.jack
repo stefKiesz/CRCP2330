@@ -100,6 +100,14 @@ method void rewriteHistory() {
 							}
 
 
+//snake's head position
+method int posX() {
+	return posX;
+}
+
+method int posY(){
+	return posY;
+}
 
 
 
