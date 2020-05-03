@@ -192,7 +192,58 @@ method boolean tryMove(){
 
 
 
+//snake growing
+method void grow(int cycle){
+	
+	//drawing head
+	do drawHead(cycle);
 
+	//growing condition
+	if(growing>0){
+	let leftgrow = leftgrow - 1;
+	let length = length + 1;
+				 }
+	else{
+		do clearTail(cycle);
+		}
+	return;
+						  }
+
+//drawing current head
+method void drawHead(int cycle){
+	
+	var SnakeGrid grid;
+
+	let grid = game.getGrid();
+	do grid.drawSnakeBit(posX, posY);
+	let histX[cycle] = posX;
+	let histY[cycle] = posY;
+
+	return;
+							   }
+
+//draw current tail
+method void clearTail(int cycle){
+	
+	var SnakeGrid grid;
+	var int tailIndex, tailX, tailY;
+
+	let tailIndex = cycle - length;
+	let tailX = histX[tailIndex];
+	let tailY = histY[tailIndex];
+	let grid = game.getGrid();
+	do grid.clearSnakeBit(tailX, tailY);
+
+	return;
+								}
+
+//snake eating apples
+method void eatFood(){
+	let leftgrow = leftgrow + growing;
+	return;
+					 }
+
+					 
 }
 
 
