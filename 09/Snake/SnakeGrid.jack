@@ -48,7 +48,39 @@ class SnakeGrid{
 						 }
 
 
+//drawing the apple in the grid
 
+method void placeFood(){
+	
+	var boolean found;
+	var int randX;
+	var int randY;
+
+	let found = false;
+	while(~found){
+	let randX = Random.randRange(sizeX);
+	let randY = Random.randRange(sizeY);
+	if(~ checkOccupied(randX, randY)){
+		let found = true;
+									 }
+				 }
+
+	let foodX = randX;
+	let foodY = randY;
+
+	return;
+
+					   }
+
+method void drawFood() {
+	do Screen.setColor(true);
+	do Screen.drawCircle((foodX*4)+2, (food*4)+2, 2);
+
+	return;
+						}
+
+	
 
 
 }
+
