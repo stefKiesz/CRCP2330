@@ -74,7 +74,7 @@ method void placeFood(){
 
 method void drawFood(){
 	do Screen.setColor(true);
-	do Screen.drawCircle((foodX*4)+2, (food*4)+2, 2);
+	do Screen.drawCircle((foodX*4)+2, (foodY*4)+2, 2);
 
 	return;
 						}
