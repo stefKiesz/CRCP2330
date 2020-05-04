@@ -41,8 +41,7 @@ constructor SnakeGame new(){
 //build snake
    let snake = Snake.new(this, grid.sizeX() / 2, grid.sizeY() / 2, 10, 3);
 
-    do grid.placeFood();
-    do grid.drawStatus();
+   do grid.placeFood();
 
     return this;
 
@@ -146,7 +145,7 @@ if( snake.getLastDir() = 4 ){
 
 //move
 if( ~ snake.tryMove() ){
-   do grid.drawCrashed();
+
    do Sys.halt();
                        }
 
@@ -171,8 +170,7 @@ if( grid.checkFood(snake.posX(), snake.posY()) ){
                                     }
 
         }
-
-        do grid.drawDone();
+        
         do Sys.halt();
 
         return;
