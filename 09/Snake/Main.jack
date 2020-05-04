@@ -9,7 +9,7 @@
 
 class Main {
 
-function void mainframe() {
+function void main() {
 
 //calling the game to run
 

@@ -160,7 +160,7 @@ method boolean tryMove(){
 		return false;
 						   }
 	else{
-		let posX = posX + 1;
+		let posY = posY + 1;
 		}
 			   }
 

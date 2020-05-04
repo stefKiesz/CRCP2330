@@ -1,7 +1,7 @@
 
 //Drawing Apples
 
-class Apple {
+class RandApple {
 	 
 	 function int getApple() {
 
