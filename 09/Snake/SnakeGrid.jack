@@ -72,14 +72,96 @@ method void placeFood(){
 
 					   }
 
-method void drawFood() {
+method void drawFood(){
 	do Screen.setColor(true);
 	do Screen.drawCircle((foodX*4)+2, (food*4)+2, 2);
 
 	return;
 						}
 
-	
+
+
+// setting original grid
+    method void initGrid(){
+
+        var int curX, curY;
+        var Array xGrid;
+
+        let grid = Array.new(sizeX);
+        let curX = 0;
+
+        while( curX < sizeX ){
+        let xGrid = Array.new(sizeY);
+        let curY = 0;
+
+        while( curY < sizeY ){
+        let xGrid[curY] = false;
+        let curY = curY + 1;
+            				  }
+        let grid[curX] = xGrid;
+        let curX = curX + 1;
+        					}
+
+        return;
+
+    }
+
+
+ //setting info to grid
+    method int sizeX(){
+        return sizeX;
+    				   }
+
+    
+    method int sizeY(){
+        return sizeY;
+                       }
+   
+    
+    method int foodX(){
+        return foodX;
+                       }
+   
+   
+    method int foodY(){
+        return foodY;
+                       }
+
+
+
+// conditions for grid
+method void setOccupied(int x, int y, boolean occupied){
+        var Array xGrid;
+        let xGrid = grid[x];
+        let xGrid[y] = occupied;
+        return;
+   													   }
+
+
+method boolean checkOccupied(int x, int y){
+        var Array xGrid;
+        let xGrid = grid[x];
+        if( xGrid[y] ){
+            return true;
+        			  }
+        else{
+            return false;
+            }
+                                          }
+
+
+ method boolean checkFood(int x, int y){
+
+        if( x = foodX ){
+       		 if( y = foodY ){
+                return true;
+                            }
+        			    }
+
+        return false;
+                                        }
+
+
 
 
 }
