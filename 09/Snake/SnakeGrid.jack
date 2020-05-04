@@ -81,7 +81,7 @@ method void drawFood(){
 
 
 
-// setting original grid
+//setting original grid
     method void initGrid(){
 
         var int curX, curY;
@@ -107,7 +107,7 @@ method void drawFood(){
     }
 
 
- //setting info to grid
+//setting info to grid
     method int sizeX(){
         return sizeX;
     				   }
@@ -162,6 +162,32 @@ method boolean checkOccupied(int x, int y){
                                         }
 
 
+//current position
+method void currentPosition(int x, int y) {
+     do Output.moveCursor(22, 21);
+     do Output.printInt(game.getCycle());
+     do Output.moveCursor(22, 42);
+     do Output.printInt(x);
+     do Output.moveCursor(22, 46);
+     do Output.printInt(y);
+        return;
+    									}
+
+//drawing block
+method void drawSnakeBit(int x, int y){
+     do Screen.setColor(true);
+     do Screen.drawRectangle(x*4, y*4, (x*4)+4, (y*4)+4);
+     do setOccupied(x, y, true);
+        return;
+    								  }
+
+ // clearing block
+method void clearSnakeBit(int x, int y){
+    do Screen.setColor(false);
+    do Screen.drawRectangle(x*4, y*4, (x*4)+4, (y*4)+4);
+    do setOccupied(x, y, false);
+        return;
+                                       }
 
 
 }
