@@ -23,5 +23,40 @@ class SnakeGame{
     field int delay;
 
 
+//build new game
+constructor SnakeGame new(){
+
+   do Random.setApple(RandApple.getApple());
+
+//setting variables
+   let score = 0;
+   let level = 1;
+   let paused = false;
+   let cycle = 0;
+   let delay = 100;
+
+//build grid
+   let grid = SnakeGrid.new(this, 512, 256);
+
+//build snake
+   let snake = Snake.new(this, grid.sizeX() / 2, grid.sizeY() / 2, 10, 3);
+
+    do grid.placeFood();
+    do grid.drawStatus();
+
+    return this;
+
+                            }
+
+ //reset game
+    method void dispose(){
+        do snake.dispose();
+        do grid.dispose();
+        do Memory.deAlloc(this);
+
+        return;
+
+                         }
+
 
 }
