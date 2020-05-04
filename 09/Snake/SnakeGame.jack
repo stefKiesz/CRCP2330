@@ -1,0 +1,27 @@
+
+class SnakeGame{
+	
+//setting snake
+    field Snake snake;
+
+//setting grid
+    field SnakeGrid grid;
+
+//setting score
+    field int score;
+
+//setting level by apples eaten
+    field int level;
+
+//game condition
+    field boolean paused;
+
+//game cycle
+    field int cycle;
+
+//between game cycles
+    field int delay;
+
+
+
+}
