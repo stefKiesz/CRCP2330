@@ -1,0 +1,14 @@
+
+class Random{
+	
+static int apple;
+
+function void setApple(int newApple){
+	let apple = newApple;
+	return;
+									}
+
+									
+
+
+}
