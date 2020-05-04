@@ -29,6 +29,26 @@ class SnakeGrid{
 
 	   }
 
-	
+//erasing a grid
+	method void dispose(){
+
+	var int curX;
+	var Array xGrid;
+
+	let curX = 0;
+
+	while(curX < sizeX){
+		let xGrid = grid[curX];
+		do xGrid.dispose();
+		let curX = curX + 1;
+					   }
+	do Memory.deAlloc(this);
+
+	return;
+						 }
+
+
+
+
 
 }
