@@ -50,13 +50,172 @@ constructor SnakeGame new(){
 
  //reset game
     method void dispose(){
-        do snake.dispose();
-        do grid.dispose();
-        do Memory.deAlloc(this);
+    do snake.dispose();
+    do grid.dispose();
+    do Memory.deAlloc(this);
 
-        return;
+    return;
 
                          }
 
 
+
+//run  game
+method void run() {
+
+  var boolean broken;
+  var boolean exit;
+  var int key;
+
+//loop until exit
+  let exit = false;
+  while(~exit){
+
+  do snake.rememberDir();
+
+//game being paused
+  if(paused){
+  let broken = false;
+
+  while(~broken){
+  let key = 0;
+
+  while(~key){
+  let key = Keyboard.keyPressed();
+             }
+  if( key = 80 ){
+  //p for pause
+  let broken = true;
+  let paused = false;
+                    }
+  if( key = 81 ){
+  //q for quit
+  let broken = true;
+  let exit = true;
+                 }
+  do Sys.wait(delay);
+                }
+            }
+ 
+ //keep loop
+  let key = Keyboard.keyPressed();
+  if( key = 80 ){
+ //p for pause
+  let paused = true;
+                }
+  if( key = 81 ){
+//q for quit
+  let exit = true;
+                }
+if( key = 130 ){
+//left arrow
+if( snake.getLastDir() = 1 ){
+   do snake.setDir(3);
+                            }
+if( snake.getLastDir() = 2 ){
+   do snake.setDir(3);
+                            }
+                }
+if( key = 131 ){
+//up arrow
+if( snake.getLastDir() = 3 ){
+   do snake.setDir(1);
+                            }
+if( snake.getLastDir() = 4 ){
+   do snake.setDir(1);
+                            }
+               }
+if( key = 132 ){
+//right arrow
+if( snake.getLastDir() = 1 ){
+   do snake.setDir(4);
+                            }
+if( snake.getLastDir() = 2 ){
+   do snake.setDir(4);
+                            }
+               }
+if( key = 133 ){
+//down arrow
+if( snake.getLastDir() = 3 ){
+   do snake.setDir(2);
+                            }
+if( snake.getLastDir() = 4 ){
+   do snake.setDir(2);
+                            }
+               }
+
+//move
+if( ~ snake.tryMove() ){
+   do grid.drawCrashed();
+   do Sys.halt();
+                       }
+
+//eating apples
+if( grid.checkFood(snake.posX(), snake.posY()) ){
+   do snake.eatFood();
+   do nextLevel();
+   do grid.placeFood();
+                                                }
+
+//snake grow
+   do snake.grow(cycle);
+
+//reset the food, delay and increment cycle
+   do grid.drawFood();
+   do Sys.wait(delay);
+   do nextCycle();
+
+//condition on snake's history
+   if( snake.checkRewriteHistory() ){
+   let cycle = snake.getLength();
+                                    }
+
+        }
+
+        do grid.drawDone();
+        do Sys.halt();
+
+        return;
+
+    }
+
+//next level
+method void nextLevel(){
+
+   let score = score + (10 * level);
+   let level = level + 1;
+   if( delay > 30 ){
+            let delay = delay - 5;
+                   }
+
+        return;
+                       }
+
+//increment cycle
+    method int nextCycle(){
+    let cycle = cycle + 1;
+    return cycle;
+                          }
+
+
+    method SnakeGrid getGrid() {
+        return grid;
+    }
+    method Snake getSnake() {
+        return snake;
+    }
+    method int getCycle() {
+        return cycle;
+    }
+    method int getScore() {
+        return score;
+    }
+    method int getLevel() {
+        return level;
+    }
+    method int getPaused() {
+        return paused;
+    }
+
+     }
 }
