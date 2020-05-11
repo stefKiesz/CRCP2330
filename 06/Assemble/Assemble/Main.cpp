@@ -5,8 +5,9 @@
 
 using namespace std;
 
-int main(int infoA, char infoB[]) {
+int main(int infoA, char *infoB[]) {
 
+	//setup
 	string inputFileName, outputFileName;
 	
 	int lineNumberROM, newAddress;
@@ -15,11 +16,13 @@ int main(int infoA, char infoB[]) {
 	
 	ofstream fout;
 
+	//setting instructions
 	if (infoA < 2 || infoA > 3) {
 		cout << "Entry: " << infoB[0] << " <inputfilename.asm> ->" << endl;
 		exit(1);
 	}
 	else {
+	//setting input file
 		inputFileName = infoB[1];
 		outputFileName = inputFileName.substr(0, inputFileName.length() - 4) + ".hack";
 
@@ -27,5 +30,12 @@ int main(int infoA, char infoB[]) {
 			outputFileName = infoB[2];
 		}
 	}
+	//setting output file
+	fout.open(outputFileName);
 
+	//if it didn't go through
+	if (fout.fail()) {
+		cout << "Could not translate file." << endl;
+		exit(1);
+	}
 }
