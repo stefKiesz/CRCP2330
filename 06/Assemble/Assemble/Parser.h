@@ -17,6 +17,7 @@
 using namespace std;
 
 class Parser{
+
 public:
 
 //opening input file
@@ -31,6 +32,20 @@ public:
 //returning type of command
 	char commandType(unsigned long& lineNr);
 
+
+//returning values to command
+	string symbol();
+
+	string dest();
+
+	string comp();
+
+	string jump();
+
+private:
+	ifstream fin;
+	string currentCommand;
+	map <char, char> commandTable;
 };
 #endif // !ASSEMBLER_PARSER_H
 
