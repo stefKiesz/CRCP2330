@@ -16,8 +16,21 @@
 
 using namespace std;
 
-class Parser
-{
+class Parser{
+public:
+
+//opening input file
+	Parser(string & fileName);
+
+//condition of returning true if file has commands need to be parsed
+	bool Commands();
+
+//reads the next command to be parsed
+	void nextLine(unsigned long& lineNr);
+
+//returning type of command
+	char commandType(unsigned long& lineNr);
+
 };
 #endif // !ASSEMBLER_PARSER_H
 
