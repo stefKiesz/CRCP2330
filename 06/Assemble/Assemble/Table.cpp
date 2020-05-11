@@ -32,4 +32,24 @@ Table::Table() {
 
 }
 
+void Table::add(string symbol, int address) {
+
+	if (AddressTable.find(symbol) == AddressTable.end()) {
+		AddressTable[symbol] = address;
+	}
+}
+
+bool Table::contains(string symbol) {
+	return (AddressTable.find(symbol) != AddressTable.end()); {
+			return AddressTable[symbol];
+	}
+}
+
+int Table::returnAddress(string symbol) {
+	if (AddressTable.find(symbol) != AddressTable.end()) {
+		return AddressTable[symbol];
+	}
+	return 0;
+}
+
 
