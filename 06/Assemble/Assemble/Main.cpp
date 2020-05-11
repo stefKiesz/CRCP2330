@@ -5,7 +5,7 @@
 
 using namespace std;
 
-int main(int info1, char info2[]) {
+int main(int infoA, char infoB[]) {
 
 	string inputFileName, outputFileName;
 	
@@ -15,5 +15,17 @@ int main(int info1, char info2[]) {
 	
 	ofstream fout;
 
+	if (infoA < 2 || infoA > 3) {
+		cout << "Entry: " << infoB[0] << " <inputfilename.asm> ->" << endl;
+		exit(1);
+	}
+	else {
+		inputFileName = infoB[1];
+		outputFileName = inputFileName.substr(0, inputFileName.length() - 4) + ".hack";
+
+		if (infoA == 3) {
+			outputFileName = infoB[2];
+		}
+	}
 
 }
