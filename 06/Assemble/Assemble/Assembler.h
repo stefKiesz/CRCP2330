@@ -2,7 +2,8 @@
 #include <string>
 
 
-class Assembler
-{
+namespace Assembler{
+
+	int assemble(const std::string & inputPathName);
 };
 
