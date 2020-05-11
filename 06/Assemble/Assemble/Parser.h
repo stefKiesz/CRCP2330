@@ -36,11 +36,11 @@ public:
 //returning values to command
 	string symbol();
 
-	string dest();
+	string destP();
 
-	string comp();
+	string compP();
 
-	string jump();
+	string jumpP();
 
 private:
 	ifstream fin;
