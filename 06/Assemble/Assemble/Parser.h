@@ -27,10 +27,10 @@ public:
 	bool Commands();
 
 //reads the next command to be parsed
-	void nextLine(unsigned long& lineNr);
+	void nextLine(unsigned long & lineNr);
 
 //returning type of command
-	char commandType(unsigned long& lineNr);
+	char commandType(unsigned long & lineNr);
 
 
 //returning values to command

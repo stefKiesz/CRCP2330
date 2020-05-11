@@ -12,7 +12,7 @@ Parser::Parser(string & fileName) {
 		exit(1);
 	}
 
-	//Setting command table
+//Setting command table
 	commandTable['@'] = 'A';
 
 
@@ -25,4 +25,36 @@ Parser::Parser(string & fileName) {
 	commandTable['!'] = 'C';
 
 	commandTable['('] = 'L';
+}
+
+bool Parser::Commands() {
+	return !fin.eof();
+}
+//reading code until command found
+void Parser::nextLine(unsigned long& lineNr) {
+	string currentLine;
+	unsigned long commentPos;
+	bool commandFound;
+
+	commandFound = false;
+
+	while (!commandFound && getline(fin, currentLine)) {
+		
+		lineNr++;
+		
+		currentLine.erase(remove_if(currentLine.begin(), currentLine.end(), ::isspace), currentLine.end());
+
+		commentPos = currentLine.find("//");
+		if (commentPos != string::npos) {
+
+			currentLine.erase(commentPos, currentLine.length() - commentPos);
+		}
+		commandFound = !currentLine.empty();
+	}
+	currentCommand = currentLine;
+}
+
+//searching command table
+char Parser::commandType(unsigned long & lineNr) {
+
 }
