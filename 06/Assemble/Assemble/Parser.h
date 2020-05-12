@@ -1,10 +1,5 @@
 #pragma once
 
-
-#ifndef ASSEMBLER_PARSER_H
-// Define directive: https://stackoverflow.com/questions/135069/ifdef-vs-if-which-is-better-safer-as-a-method-for-enabling-disabling-compila
-#define ASSEMBLER_PARSER_H
-
 #include <iostream>
 #include <fstream>
 
@@ -47,7 +42,6 @@ private:
 	string currentCommand;
 	map <char, char> commandTable;
 };
-#endif // !ASSEMBLER_PARSER_H
 
 
 

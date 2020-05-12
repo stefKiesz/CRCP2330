@@ -1,6 +1,4 @@
 #pragma once
-#ifndef ASSEMBLER_TABLE_H
-#define ASSEMBLER_TABLE_H
 
 #include <iostream>
 #include <map>
@@ -27,6 +25,6 @@ private:
 	map <string, int> AddressTable;
 
 };
-#endif // !ASSEMBLER_TABLE_H
+
 
 
