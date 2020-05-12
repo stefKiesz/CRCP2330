@@ -71,11 +71,11 @@ string Parser::symbol() {
 	openBracketPos = currentCommand.find('(');
 	closeBracketPos = currentCommand.find(')');
 
-//returning to A-instruction at @
+//returning to A-instruction
 	if (currentCommand[0] == '@') {
 		return currentCommand.substr(1, currentCommand.length() - 1);
 	}
-//returning to L-instruction between '(' & ')'
+//returning to L-instruction
 	else if (openBracketPos != string::npos && closeBracketPos != string::npos) {
 		return currentCommand.substr(openBracketPos + 1, closeBracketPos - openBracketPos - 1);
 	}
@@ -83,4 +83,49 @@ string Parser::symbol() {
 	return "";
 }
 
+//setting dest function
+string Parser::destP() {
+	unsigned long equalSignPos;
 
+	equalSignPos = currentCommand.find('=');
+
+	if (equalSignPos != string::npos) {
+		return currentCommand.substr(0, equalSignPos);
+	}
+	return "";
+}
+
+//setting comp function
+string Parser::compP() {
+	unsigned long equalSignPos, semiColonPos;
+
+	equalSignPos = currentCommand.find('=');
+	semiColonPos = currentCommand.find(';');
+
+
+	if (equalSignPos != string::npos) {
+		if (semiColonPos != string::npos) {
+//dest = comp ; jump
+			return currentCommand.substr(equalSignPos + 1, semiColonPos - equalSignPos - 1);
+		}
+//dest = comp
+		return currentCommand.substr(equalSignPos + 1, currentCommand.length() - equalSignPos - 1);
+	}
+	else if (semiColonPos != string::npos) {
+//comp ; jump
+		return currentCommand.substr(0, semiColonPos);
+	}
+	return "";
+}
+
+//setting jump function
+string Parser::jumpP() {
+	unsigned long semiColonPos;
+
+	semiColonPos = currentCommand.find(';');
+
+	if (semiColonPos != string::npos) {
+		return currentCommand.substr(semiColonPos + 1, currentCommand.length() - semiColonPos - 1);
+	}
+	return "";
+}
