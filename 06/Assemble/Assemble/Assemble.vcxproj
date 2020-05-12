@@ -145,6 +145,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Assembler.h" />
+    <ClInclude Include="ReadMe.h" />
     <ClInclude Include="Parser.h" />
     <ClInclude Include="Table.h" />
   </ItemGroup>
